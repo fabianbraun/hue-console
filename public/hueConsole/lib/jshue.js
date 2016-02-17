@@ -95,7 +95,7 @@ var jsHueAPI = function(XMLHttpRequest, JSON) {
      * @private
      * @param {String} method GET, PUT, POST, or DELETE
      * @param {String} url request URL
-     * @param {Object} data request data object to serialize for request JSON 
+     * @param {Object} data request data object to serialize for request JSON
      * @param {Function} success success callback
      * @param {Function} failure failure callback
      * @return {Boolean} true if request was sent, false otherwise
@@ -264,6 +264,7 @@ var jsHueAPI = function(XMLHttpRequest, JSON) {
                     var data = {
                         devicetype: type
                     };
+                    console.log(data);
                     return _post(_bridgeUrl, data, success, failure);
                 },
 
@@ -423,7 +424,7 @@ var jsHueAPI = function(XMLHttpRequest, JSON) {
                          *
                          * @method setLight
                          * @param {Number} id light ID
-                         * @param {Object} data attribute data 
+                         * @param {Object} data attribute data
                          * @param {Function} success success callback
                          * @param {Function} failure failure callback
                          * @return {Boolean} true if request was sent, false otherwise
@@ -608,7 +609,7 @@ var jsHueAPI = function(XMLHttpRequest, JSON) {
                         /* ================================================== */
                         /* Sensors API                                        */
                         /* ================================================== */
- 
+
                         /**
                          * Gets sensors.
                          *
@@ -770,11 +771,11 @@ var jsHueAPI = function(XMLHttpRequest, JSON) {
 if(typeof XMLHttpRequest !== 'undefined' && typeof JSON !== 'undefined') {
     /**
      * jsHue class.
-     * 
-     * @class jsHue 
+     *
+     * @class jsHue
      * @extends jsHueAPI
-     * @constructor 
-     * @return {Object} instance 
+     * @constructor
+     * @return {Object} instance
      */
     var jsHue = jsHueAPI.bind(null, XMLHttpRequest, JSON);
 }
